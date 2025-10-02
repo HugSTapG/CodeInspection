@@ -1,0 +1,13 @@
+src/main/java/labcodeinspection/EmailApp.java:5:	CommentRequired:	CommentRequired: Class comments are required
+src/main/java/labcodeinspection/EmailApp.java:5:	UseUtilityClass:	UseUtilityClass: All methods are static. Consider adding a private no-args constructor to prevent instantiation.
+src/main/java/labcodeinspection/EmailApp.java:7:	CommentRequired:	CommentRequired: Public method and constructor comments are required
+src/main/java/labcodeinspection/EmailApp.java:8:	CloseResource:	CloseResource: Ensure that resources like this Scanner object are closed after use
+src/main/java/labcodeinspection/EmailApp.java:8:	LocalVariableCouldBeFinal:	LocalVariableCouldBeFinal: Local variable 'sc' could be declared final
+src/main/java/labcodeinspection/EmailApp.java:8:	ShortVariable:	ShortVariable: Avoid variables with short names like sc
+src/main/java/labcodeinspection/EmailApp.java:10:	SystemPrintln:	SystemPrintln: Usage of System.out/err
+src/main/java/labcodeinspection/EmailApp.java:11:	LocalVariableCouldBeFinal:	LocalVariableCouldBeFinal: Local variable 'firstName' could be declared final
+src/main/java/labcodeinspection/EmailApp.java:13:	SystemPrintln:	SystemPrintln: Usage of System.out/err
+src/main/java/labcodeinspection/EmailApp.java:14:	LocalVariableCouldBeFinal:	LocalVariableCouldBeFinal: Local variable 'lastName' could be declared final
+src/main/java/labcodeinspection/EmailApp.java:16:	SystemPrintln:	SystemPrintln: Usage of System.out/err
+src/main/java/labcodeinspection/EmailApp.java:18:	LocalVariableCouldBeFinal:	LocalVariableCouldBeFinal: Local variable 'depChoice' could be declared final
+src/main/java/labcodeinspection/EmailApp.java:21:	LocalVariableCouldBeFinal:	LocalVariableCouldBeFinal: Local variable 'email' could be declared final
