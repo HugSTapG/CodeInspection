@@ -1,26 +1,50 @@
 package labcodeinspection;
 
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public class EmailApp {
+/**
+ * Aplicación principal para probar la clase Email.
+ */
+public final class EmailApp {
 
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+    /** Logger para la aplicación */
+    private static final Logger LOGGER = Logger.getLogger(EmailApp.class.getName());
 
-		System.out.print("Enter your first name: ");
-		String firstName = sc.nextLine();
+    // Constructor privado para evitar instanciación (clase de utilidad)
+    private EmailApp() { }
 
-		System.out.print("Enter your last name: ");
-		String lastName = sc.nextLine();
+    /**
+     * Método principal de la aplicación.
+     *
+     * @param args argumentos de línea de comandos
+     */
+    public static void main(final String[] args) {
+        try (Scanner scanner = new Scanner(System.in)) {
+            
+            if (LOGGER.isLoggable(Level.INFO)) {
+                LOGGER.info("Enter first name: ");
+            }
+            final String firstName = scanner.nextLine();
 
-		System.out.print("\nDEPARTMENT CODE\n1. for sales\n2. for Development\n3. for accounting\nEnter code: ");
+            if (LOGGER.isLoggable(Level.INFO)) {
+                LOGGER.info("Enter last name: ");
+            }
+            final String lastName = scanner.nextLine();
 
-		int depChoice = sc.nextInt();
-		sc.close();
+            if (LOGGER.isLoggable(Level.INFO)) {
+                LOGGER.info("Department Codes:\n1 for Sales\n2 for Development\n3 for Accounting\nEnter department code:");
+            }
+            final int depChoice = scanner.nextInt();
 
-		Email email = new Email(firstName, lastName);
-		email.setDeparment(depChoice);
-		email.generateEmail();
-		email.showInfo();
-	}
+            final Email email = new Email(firstName, lastName);
+            email.setDepartment(depChoice);
+            email.generateEmail();
+
+            if (LOGGER.isLoggable(Level.INFO)) {
+                LOGGER.log(Level.INFO, "\nFIRST NAME= {0}\nLAST NAME= {1}", new Object[]{firstName, lastName});
+            }
+        }
+    }
 }
